@@ -81,7 +81,7 @@ export function Header() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <a href="#home" className="flex items-center gap-2">
-          <span className="text-xl font-bold font-headline text-primary">Profile Canvas</span>
+          <span className="text-xl font-bold font-headline text-primary">Sharad's Digital Space</span>
         </a>
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
@@ -102,7 +102,7 @@ export function Header() {
               <div className="flex flex-col gap-6 p-6">
                 <div className="flex justify-between items-center">
                    <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
-                     <span className="text-xl font-bold font-headline text-primary">Profile Canvas</span>
+                     <span className="text-xl font-bold font-headline text-primary">Sharad's Digital Space</span>
                    </a>
                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                      <X className="h-6 w-6" />

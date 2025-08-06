@@ -5,7 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Profile Canvas',
+  title: "Sharad's Digital Space",
   description: 'A personal portfolio by Sharad Singh, Web Developer and Programmer.',
 };
 
