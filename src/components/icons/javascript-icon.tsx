@@ -1,17 +1,10 @@
 import type { SVGProps } from "react";
-import { cn } from "@/lib/utils";
 
 export function JavascriptIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="0" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M10 9a3 3 0 0 1-6 0" />
-      <path d="M14 15a3 3 0 0 0 6 0" />
-      <path d="M7 9v12" strokeWidth="2" />
-      <path d="M17 3v12" strokeWidth="2" />
-      <path d="M12 3v1" strokeWidth="2" />
-      <path d="M12 8v1" strokeWidth="2" />
-      <path d="M12 13v1" strokeWidth="2" />
-      <path d="M12 18v3" strokeWidth="2" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#F7DF1E" {...props}>
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.28 15.39c-.27.26-.64.41-1.03.41-.43 0-.8-.16-1.09-.45-.29-.29-.44-.66-.44-1.1s.15-.81.44-1.09c.29-.29.66-.44 1.09-.44s.8.15 1.09.44c.29.29.44.65.44 1.09s-.16.82-.47 1.14zm5.13-1.42c-.22.37-.53.66-.91.86-.38.2-.82.3-1.32.3-.65 0-1.22-.16-1.72-.47-.5-.31-.86-.74-1.09-1.27l.83-.5c.18.4.43.71.74.93.31.22.66.33 1.05.33.35 0 .66-.08.91-.25.26-.17.38-.4.38-.71 0-.2-.07-.38-.2-.53s-.32-.27-.56-.37l-1.12-.4c-.55-.2-1-.48-1.35-.85-.34-.37-.52-.82-.52-1.33 0-.5.2-.94.6-1.32.4-.38.9-.57 1.5-.57.57 0 1.07.15 1.5.45.43.3.73.73.89 1.28l-.83.45c-.15-.35-.35-.63-.6-.82-.25-.19-.55-.29-.9-.29-.3 0-.55.07-.75.22-.2.15-.3.33-.3.55 0 .18.06.33.18.46s.28.24.48.33l1.12.4c.65.23 1.18.54 1.58.94.4.4.6.9.6 1.48 0 .6-.21 1.11-.64 1.53z"/>
     </svg>
   );
 }

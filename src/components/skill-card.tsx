@@ -54,7 +54,7 @@ export function SkillCard({ icon, name, proficiency }: SkillCardProps) {
         <div className="relative h-20 w-20">
           <CircularProgress proficiency={proficiency} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-12 w-12 text-primary transition-colors group-hover:text-accent-foreground">
+            <div className="h-12 w-12 text-primary transition-colors group-hover:text-primary-foreground">
               {icon}
             </div>
           </div>

@@ -11,6 +11,8 @@ import { TailwindCssIcon } from "@/components/icons/tailwind-css-icon"
 import { Github } from "lucide-react"
 import { CIcon } from "@/components/icons/c-icon"
 import { CoreJavaIcon } from "@/components/icons/core-java-icon"
+import { MongodbIcon } from "@/components/icons/mongodb-icon"
+import { SqlIcon } from "@/components/icons/sql-icon"
 
 const skills = [
   { name: "HTML5", icon: <Html5Icon className="w-full h-full" />, proficiency: 90 },
@@ -23,6 +25,8 @@ const skills = [
   { name: "Tailwind CSS", icon: <TailwindCssIcon className="w-full h-full" />, proficiency: 85 },
   { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 70 },
   { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 75 },
+  { name: "MongoDB", icon: <MongodbIcon className="w-full h-full" />, proficiency: 60 },
+  { name: "SQL", icon: <SqlIcon className="w-full h-full" />, proficiency: 70 },
   { name: "Git", icon: <Github className="w-full h-full" />, proficiency: 80 },
 ]
 
