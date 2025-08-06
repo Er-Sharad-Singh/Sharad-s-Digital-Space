@@ -22,7 +22,8 @@ const CircularProgress = ({
 
   const getProficiencyColor = (p: number) => {
     if (p >= 90) return "text-green-500"
-    if (p >= 70) return "text-orange-500"
+    if (p >= 70) return "text-amber-400"
+    if (p >= 60) return "text-orange-500"
     return "text-red-500"
   }
   
@@ -58,7 +59,8 @@ const CircularProgress = ({
 export function SkillCard({ icon, name, proficiency }: SkillCardProps) {
     const getProficiencyColor = (p: number) => {
         if (p >= 90) return "text-green-500"
-        if (p >= 70) return "text-orange-500"
+        if (p >= 70) return "text-amber-400"
+        if (p >= 60) return "text-orange-500"
         return "text-red-500"
     }
 
