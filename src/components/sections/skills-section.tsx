@@ -12,6 +12,7 @@ import { CIcon } from "@/components/icons/c-icon"
 import { CoreJavaIcon } from "@/components/icons/core-java-icon"
 import { MongodbIcon } from "@/components/icons/mongodb-icon"
 import { SqlIcon } from "@/components/icons/sql-icon"
+import { BootstrapIcon } from "@/components/icons/bootstrap-icon"
 
 const skills = [
   { name: "HTML5", icon: <Html5Icon className="w-full h-full" />, proficiency: 95 },
@@ -21,6 +22,7 @@ const skills = [
   { name: "Next.js", icon: <NextjsIcon className="w-full h-full" />, proficiency: 75 },
   { name: "Node.js", icon: <NodejsIcon className="w-full h-full" />, proficiency: 70 },
   { name: "Tailwind CSS", icon: <TailwindCssIcon className="w-full h-full" />, proficiency: 90 },
+  { name: "Bootstrap", icon: <BootstrapIcon className="w-full h-full" />, proficiency: 80 },
   { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 65 },
   { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 75 },
   { name: "MongoDB", icon: <MongodbIcon className="w-full h-full" />, proficiency: 60 },
