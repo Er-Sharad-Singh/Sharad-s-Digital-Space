@@ -62,14 +62,7 @@ export function SkillCard({ icon, name, proficiency }: SkillCardProps) {
         return "text-red-500"
     }
 
-    const getIconColor = (p: number) => {
-        if (p >= 90) return "text-green-500 group-hover:text-green-600"
-        if (p >= 70) return "text-orange-500 group-hover:text-orange-600"
-        return "text-red-500 group-hover:text-red-600"
-    }
-
     const proficiencyColor = getProficiencyColor(proficiency)
-    const iconColor = getIconColor(proficiency)
 
   return (
     <Card className="group flex flex-col items-center justify-center p-4 transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:-translate-y-1">
@@ -77,7 +70,7 @@ export function SkillCard({ icon, name, proficiency }: SkillCardProps) {
         <div className="relative h-20 w-20">
           <CircularProgress proficiency={proficiency} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className={cn("h-12 w-12 text-primary transition-colors", iconColor)}>
+            <div className="h-12 w-12 text-primary/80 transition-colors group-hover:text-primary">
               {icon}
             </div>
           </div>
