@@ -17,7 +17,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { Section } from "@/components/section"
-import { Github, Linkedin, Twitter, Facebook, Instagram, Send } from "lucide-react"
+import { Github, Linkedin, Facebook, Instagram, Send } from "lucide-react"
+import { XIcon } from "@/components/icons/x-icon"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,6 +32,14 @@ const formSchema = z.object({
     message: "Message must be at least 10 characters.",
   }),
 })
+
+const socialLinks = [
+  { name: "LinkedIn", icon: <Linkedin className="h-6 w-6" />, url: "#" },
+  { name: "X", icon: <XIcon className="h-6 w-6" />, url: "#" },
+  { name: "Facebook", icon: <Facebook className="h-6 w-6" />, url: "#" },
+  { name: "Instagram", icon: <Instagram className="h-6 w-6" />, url: "#" },
+  { name: "GitHub", icon: <Github className="h-6 w-6" />, url: "#" },
+];
 
 export function ContactSection() {
   const { toast } = useToast()
@@ -61,27 +71,27 @@ export function ContactSection() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-4 my-8">
-        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-          <Linkedin className="h-8 w-8" />
-          <span className="sr-only">LinkedIn</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-          <Twitter className="h-8 w-8" />
-          <span className="sr-only">Twitter</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-          <Facebook className="h-8 w-8" />
-          <span className="sr-only">Facebook</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-          <Instagram className="h-8 w-8" />
-          <span className="sr-only">Instagram</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-          <Github className="h-8 w-8" />
-          <span className="sr-only">GitHub</span>
-        </a>
+      <div className="flex justify-center gap-6 my-8">
+        <TooltipProvider>
+          {socialLinks.map((link) => (
+            <Tooltip key={link.name}>
+              <TooltipTrigger asChild>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground transition-transform duration-300 hover:text-primary hover:-translate-y-1"
+                >
+                  {link.icon}
+                  <span className="sr-only">{link.name}</span>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{link.name}</p>
+              </TooltipContent>
+            </Tooltip>
+          ))}
+        </TooltipProvider>
       </div>
 
       <div className="mx-auto mt-12 max-w-xl">
