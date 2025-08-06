@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { Section } from "@/components/section"
-import { Send } from "lucide-react"
+import { Github, Linkedin, Twitter, Facebook, Instagram, Send } from "lucide-react"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -59,6 +59,29 @@ export function ContactSection() {
         <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           Have a project in mind or just want to say hello? Feel free to send me a message.
         </p>
+      </div>
+
+      <div className="flex justify-center gap-4 my-8">
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Linkedin className="h-8 w-8" />
+          <span className="sr-only">LinkedIn</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Twitter className="h-8 w-8" />
+          <span className="sr-only">Twitter</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Facebook className="h-8 w-8" />
+          <span className="sr-only">Facebook</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Instagram className="h-8 w-8" />
+          <span className="sr-only">Instagram</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Github className="h-8 w-8" />
+          <span className="sr-only">GitHub</span>
+        </a>
       </div>
 
       <div className="mx-auto mt-12 max-w-xl">
