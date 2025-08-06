@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { ChatWidget } from '@/components/chat-widget';
 
 export const metadata: Metadata = {
   title: "Sharad's Digital Space",
@@ -31,6 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <ChatWidget />
           <Toaster />
         </ThemeProvider>
       </body>
