@@ -8,6 +8,9 @@ import { ChatWidget } from '@/components/chat-widget';
 export const metadata: Metadata = {
   title: "Sharad's Digital Space",
   description: 'A personal portfolio by Sharad Singh, Web Developer and Programmer.',
+  icons: {
+    icon: [],
+  }
 };
 
 export default function RootLayout({
