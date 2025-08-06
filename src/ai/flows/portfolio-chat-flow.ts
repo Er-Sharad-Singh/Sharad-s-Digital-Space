@@ -3,77 +3,115 @@
  * @fileOverview A portfolio chatbot AI agent.
  *
  * - chat - A function that handles the chat process.
- * - ChatInput - The input type for the chat function.
- * - ChatOutput - The return type for the chat function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'zod';
+import { ai } from '@/ai/genkit';
+import { ChatInputSchema, ChatOutputSchema, type ChatInput, type ChatOutput } from './schemas';
 
-const ChatInputSchema = z.object({
-  message: z.string().describe('The user message'),
-});
-export type ChatInput = z.infer<typeof ChatInputSchema>;
-
-const ChatOutputSchema = z.object({
-  response: z.string().describe("The AI's response to the user."),
-});
-export type ChatOutput = z.infer<typeof ChatOutputSchema>;
+const portfolioContext = {
+  name: "Sharad Singh",
+  title: "MERN Stack Developer",
+  about: "I'm a passionate and detail-oriented MERN Stack Developer with a strong foundation in Computer Science & Engineering...",
+  education: {
+    degree: "B.Tech",
+    branch: "Computer Science & Engineering",
+    university: "AKTU, Lucknow",
+    duration: "2022 - 2026"
+  },
+  experience: [{
+      position: "Web Development Trainee",
+      company: "Softpro India",
+      duration: "Sep 2024 - Nov 2024",
+      role: "MERN Stack Developer",
+      highlights: [
+        "Worked on responsive front-end using React.js & Tailwind CSS",
+        "Implemented backend APIs with Express and Node.js",
+        "Collaborated on full-stack apps"
+      ]
+    },
+    {
+      position: "Web Development Trainee",
+      company: "Skill Chase",
+      duration: "Aug 2024 - Oct 2024",
+      role: "Frontend + MERN Stack Developer",
+      highlights: [
+        "Developed interactive UI with React",
+        "Used Git and deployed projects",
+        "Built real-world projects"
+      ]
+    }
+    ], // as before
+  skills: {
+    frontend: {
+      HTML5: "95%",
+      CSS3: "90%",
+      JavaScript: "85%",
+      React: "85%",
+      NextJS: "75%",
+      Tailwind: "90%",
+      Bootstrap: "80%"
+    },
+    backend: {
+      NodeJS: "70%",
+      ExpressJS: "70%",
+      MongoDB: "60%",
+      SQL: "70%"
+    },
+    languages: {
+      CoreJava: "75%",
+      AdvancedC: "65%"
+    },
+    tools: ["Git", "Firebase", "Stripe", "D3.js"]
+  }, // as before
+  projects: [ {
+      name: "E-Commerce Platform",
+      stack: ["Next.js", "Stripe", "Tailwind CSS"],
+      desc: "Full-featured online store with product catalog, cart, and checkout."
+    },
+    {
+      name: "Task Management App",
+      stack: ["React", "Firebase"],
+      desc: "Kanban board with drag-and-drop, auth, and real-time sync."
+    },
+    {
+      name: "Portfolio Website V1",
+      stack: ["HTML", "CSS", "JavaScript"],
+      desc: "Clean and responsive personal portfolio website."
+    }], // as before
+  contact: {
+    email: "ofcsharadsinghthakur@gmail.com",
+    phone: "+91 8400174269",
+    github: "https://github.com/er-sharad-singh",
+    portfolio: "https://er-sharad-singh.github.io/Portfolio",
+    linkedin: "https://linkedin.com/in/er-sharad-singh"
+  },
+  availability: "Sharad is currently available for internship, freelance, or entry-level development roles."
+};
 
 export async function chat(input: ChatInput): Promise<ChatOutput> {
   return portfolioChatFlow(input);
 }
 
-const portfolioContext = `
-Sharad Singh's Portfolio Details:
-
-About Me:
-I'm a passionate and detail-oriented MERN Stack Developer with a strong foundation in computer science. I love building smooth, responsive user interfaces and continuously expanding my skills in creating scalable and efficient back-end systems.
-I’m currently focused on mastering full-stack web development using MongoDB, Express.js, React, and Node.js. Beyond coding, I enjoy keeping up with the latest tech trends, contributing to open-source communities, and recharging with a good cup of coffee.
-Always curious, always learning — I’m driven by the challenge of turning ideas into impactful digital experiences.
-
-Education:
-- Bachelor of Technology in Computer Science & Engineering
-- Dr. A. P. J. Abdul Kalam Technical University, Lucknow
-- 2022 - 2026
-
-Experience:
-- Web Devlopment Trainee at Softpro India (Sep 2024 - Nov 2024): MERN Stack Devloper
-- Web Devlopment Trainee at Skill Chase (Aug 2024 - Oct 2024)
-
-Skills:
-- HTML5: 95%
-- CSS3: 90%
-- JavaScript: 85%
-- React: 85%
-- Next.js: 75%
-- Node.js: 70%
-- Tailwind CSS: 90%
-- Bootstrap: 80%
-- Advanced C: 65%
-- Core Java: 75%
-- MongoDB: 60%
-- SQL: 70%
-- Git: 80%
-
-Projects:
-- E-commerce Platform: A full-featured e-commerce site with a modern UI, product catalog, shopping cart, and checkout process, built with Next.js and Stripe.
-- Task Management App: A Kanban-style task management application with drag-and-drop functionality, user authentication, and real-time updates using Firebase.
-- Portfolio Website V1: My previous personal portfolio website, designed to be clean, simple, and responsive. Built with pure HTML, CSS, and JavaScript.
-- Data Visualization Dashboard: An interactive dashboard for visualizing complex datasets using D3.js and React, providing insightful charts and graphs.
-`;
-
 const prompt = ai.definePrompt({
   name: 'portfolioChatPrompt',
-  input: {schema: ChatInputSchema},
-  output: {schema: ChatOutputSchema},
-  prompt: `You are a friendly and helpful AI assistant for Sharad Singh's portfolio website. Your goal is to answer questions from visitors based on the information provided below. Be conversational and engaging. If a question is outside the scope of the provided information, politely say that you can only answer questions about Sharad's portfolio.
+  input: { schema: ChatInputSchema },
+  output: { schema: ChatOutputSchema },
+  prompt: `
+You are a friendly and helpful AI assistant on Sharad Singh's portfolio website. Your job is to answer questions based on his portfolio context below.
 
-Context about Sharad Singh:
-${portfolioContext}
+If the user asks whether Sharad is available for work (like freelance, internship, or project), confidently say:
+"Yes, Sharad is currently available for freelance or internship opportunities. You can connect via email or fill out the portfolio form to discuss your project."
+
+If the user's question is outside the scope of the portfolio data or you don't know the answer, say:
+"I'm not sure about that specific detail, but you can fill out the contact form on the portfolio website to get in touch with Sharad directly!"
+
+Be conversational, polite, and helpful.
+
+Context:
+${JSON.stringify(portfolioContext, null, 2)}
 
 User's message: {{{message}}}
-`,
+`
 });
 
 const portfolioChatFlow = ai.defineFlow(
@@ -83,7 +121,7 @@ const portfolioChatFlow = ai.defineFlow(
     outputSchema: ChatOutputSchema,
   },
   async (input) => {
-    const {output} = await prompt(input);
+    const { output } = await prompt(input);
     return output!;
   }
 );
