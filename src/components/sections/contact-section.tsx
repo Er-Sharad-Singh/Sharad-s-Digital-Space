@@ -34,11 +34,11 @@ const formSchema = z.object({
 })
 
 const socialLinks = [
-  { name: "LinkedIn", icon: <Linkedin className="h-6 w-6" />, url: "#" },
-  { name: "X", icon: <XIcon className="h-6 w-6" />, url: "#" },
-  { name: "Facebook", icon: <Facebook className="h-6 w-6" />, url: "#" },
-  { name: "Instagram", icon: <Instagram className="h-6 w-6" />, url: "#" },
-  { name: "GitHub", icon: <Github className="h-6 w-6" />, url: "#" },
+  { name: "LinkedIn", icon: <Linkedin className="h-6 w-6" />, url: "https://www.linkedin.com/in/er-sharad-singh/" },
+  { name: "X", icon: <XIcon className="h-6 w-6" />, url: "https://x.com/Er_Sharad_Singh" },
+  { name: "Facebook", icon: <Facebook className="h-6 w-6" />, url: "https://www.facebook.com/profile.php?id=100032432320231" },
+  { name: "Instagram", icon: <Instagram className="h-6 w-6" />, url: "https://www.instagram.com/ofc_sharad_thakur/" },
+  { name: "GitHub", icon: <Github className="h-6 w-6" />, url: "https://github.com/Er-sharad-singh" },
 ];
 
 export function ContactSection() {
