@@ -78,7 +78,7 @@ export function SkillCard({ icon, name, proficiency }: SkillCardProps) {
           </div>
         </div>
         <p className="font-semibold text-center">{name}</p>
-        <p className={cn("text-sm font-bold", proficiencyColor)}>{proficiency}%</p>
+        <p className={cn("text-sm font-bold", proficiencyColor)}></p>
       </CardContent>
     </Card>
   )
