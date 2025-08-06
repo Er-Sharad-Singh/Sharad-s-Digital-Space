@@ -23,12 +23,12 @@ const skills = [
   { name: "Next.js", icon: <NextjsIcon className="w-full h-full" />, proficiency: 75 },
   { name: "Node.js", icon: <NodejsIcon className="w-full h-full" />, proficiency: 70 },
   { name: "Tailwind CSS", icon: <TailwindCssIcon className="w-full h-full" />, proficiency: 90 },
-  { name: "Bootstrap", icon: <BootstrapIcon className="w-full h-full" />, proficiency: 80 },
-  { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 65 },
-  { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 75 },
-  { name: "MongoDB", icon: <MongodbIcon className="w-full h-full" />, proficiency: 60 },
+  { name: "Bootstrap", icon: <BootstrapIcon className="w-full h-full" />, proficiency: 88},
+  { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 92},
+  { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 86},
+  { name: "MongoDB", icon: <MongodbIcon className="w-full h-full" />, proficiency: 85},
     { name: "REST API", icon: <RestApiIcon className="w-full h-full" />, proficiency: 80 },
-  { name: "SQL", icon: <SqlIcon className="w-full h-full" />, proficiency: 70 },
+  { name: "SQL", icon: <SqlIcon className="w-full h-full" />, proficiency: 80 },
   { name: "Git", icon: <Github className="w-full h-full" />, proficiency: 80 },
 ]
 
