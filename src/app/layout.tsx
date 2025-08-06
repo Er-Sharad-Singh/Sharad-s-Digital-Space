@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Profile Canvas',
-  description: 'A personal portfolio by Jane Doe, Web Developer and Programmer.',
+  description: 'A personal portfolio by Sharad Singh, Web Developer and Programmer.',
 };
 
 export default function RootLayout({

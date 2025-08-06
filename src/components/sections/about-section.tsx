@@ -10,7 +10,7 @@ export function AboutSection() {
         <div className="flex flex-col justify-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Me</h2>
           <p className="text-muted-foreground md:text-lg">
-            I'm a passionate and detail-oriented developer with a knack for bringing ideas to life through code. With a background in computer science and a love for design, I specialize in crafting seamless user interfaces and robust back-end systems.
+            I'm a passionate and detail-oriented developer currently honing my skills in web development. With a background in computer science, I specialize in crafting seamless user interfaces and am growing my expertise in robust back-end systems.
           </p>
           <p className="text-muted-foreground md:text-lg">
             When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or enjoying a good cup of coffee.
@@ -25,7 +25,7 @@ export function AboutSection() {
         <div className="flex items-center justify-center">
             <Image
               src="https://placehold.co/400x400.png"
-              alt="Portrait of Jane Doe"
+              alt="Portrait of Sharad Singh"
               width={400}
               height={400}
               className="rounded-full object-cover shadow-lg border-4 border-primary/20"

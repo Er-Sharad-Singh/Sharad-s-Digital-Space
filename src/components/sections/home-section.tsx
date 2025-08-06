@@ -15,7 +15,7 @@ export function HomeSection() {
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               <span className="text-muted-foreground">Hello, I'm </span>
-              <span className="text-primary">Jane Doe</span>
+              <span className="text-primary">Sharad Singh</span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
               I am a <AnimatedText roles={roles} className="font-semibold text-accent-foreground" />
