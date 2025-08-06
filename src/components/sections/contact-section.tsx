@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { Section } from "@/components/section"
-import { Github, Linkedin, Facebook, Instagram, Send } from "lucide-react"
+import { Github, Linkedin, Facebook, Instagram, Send, Loader2 } from "lucide-react"
 import { XIcon } from "@/components/icons/x-icon"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
@@ -53,13 +53,36 @@ export function ContactSection() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    })
-    form.reset()
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // IMPORTANT: Replace this URL with your own Formspree form endpoint.
+    // Go to https://formspree.io/ to create a new form.
+    const formspreeEndpoint = "https://formspree.io/f/mjkoazvy";
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        })
+        form.reset()
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem sending your message. Please try again.",
+      })
+    }
   }
 
   return (
@@ -136,8 +159,13 @@ export function ContactSection() {
                 </FormItem>
               )}
             />
-            <Button type="submit" size="lg" className="w-full">
-              Send Message <Send className="ml-2 h-4 w-4" />
+            <Button type="submit" size="lg" className="w-full" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Send className="mr-2 h-4 w-4" />
+              )}
+              {form.formState.isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </Form>

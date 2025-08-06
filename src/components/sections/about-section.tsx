@@ -19,7 +19,7 @@ export function AboutSection() {
             Always curious, always learning — I’m driven by the challenge of turning ideas into impactful digital experiences.
           </p>
           <Button asChild size="lg" className="w-fit">
-            <a href="/resume.pdf" download>
+            <a href="/Sharad_Singh.pdf" download>
               <Download className="mr-2 h-5 w-5" />
               Download Resume
             </a>
@@ -27,7 +27,7 @@ export function AboutSection() {
         </div>
         <div className="flex items-center justify-center">
             <Image
-              src="https://placehold.co/400x400.png"
+              src="/about.jpeg"
               alt="Portrait of Sharad Singh"
               width={400}
               height={400}

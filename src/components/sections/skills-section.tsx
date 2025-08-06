@@ -13,6 +13,7 @@ import { CoreJavaIcon } from "@/components/icons/core-java-icon"
 import { MongodbIcon } from "@/components/icons/mongodb-icon"
 import { SqlIcon } from "@/components/icons/sql-icon"
 import { BootstrapIcon } from "@/components/icons/bootstrap-icon"
+import { RestApiIcon } from "@/components/icons/rest-api-icon"
 
 const skills = [
   { name: "HTML5", icon: <Html5Icon className="w-full h-full" />, proficiency: 95 },
@@ -26,6 +27,7 @@ const skills = [
   { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 65 },
   { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 75 },
   { name: "MongoDB", icon: <MongodbIcon className="w-full h-full" />, proficiency: 60 },
+    { name: "REST API", icon: <RestApiIcon className="w-full h-full" />, proficiency: 80 },
   { name: "SQL", icon: <SqlIcon className="w-full h-full" />, proficiency: 70 },
   { name: "Git", icon: <Github className="w-full h-full" />, proficiency: 80 },
 ]
