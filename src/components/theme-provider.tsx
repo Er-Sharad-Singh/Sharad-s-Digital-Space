@@ -10,9 +10,17 @@ import { cn } from "@/lib/utils"
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [config] = useConfig()
 
-  return (
-    <NextThemesProvider {...props}>
-      <div className={cn(`theme-${config.theme}`)}>{children}</div>
-    </NextThemesProvider>
-  )
+  React.useEffect(() => {
+    document.body.classList.forEach(className => {
+      if (className.match(/^theme.*/)) {
+        document.body.classList.remove(className)
+      }
+    })
+
+    const theme = `theme-${config.theme}`
+    document.body.classList.add(theme)
+  }, [config])
+
+
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
