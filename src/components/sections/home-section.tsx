@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 
 export function HomeSection() {
-  const roles = ["Web Developer", "Programmer", "UI/UX Enthusiast"]
+  const roles = ["Web Developer", "Programmer", "Tailwind/Bootstrap CSS"]
 
   return (
     <section

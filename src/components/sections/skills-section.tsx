@@ -8,18 +8,22 @@ import { ReactIcon } from "@/components/icons/react-icon"
 import { NextjsIcon } from "@/components/icons/nextjs-icon"
 import { NodejsIcon } from "@/components/icons/nodejs-icon"
 import { TailwindCssIcon } from "@/components/icons/tailwind-css-icon"
-import { FigmaIcon } from "@/components/icons/figma-icon"
+import { Github } from "lucide-react"
+import { CIcon } from "@/components/icons/c-icon"
+import { CoreJavaIcon } from "@/components/icons/core-java-icon"
 
 const skills = [
-  { name: "HTML5", icon: <Html5Icon className="w-full h-full" /> },
-  { name: "CSS3", icon: <Css3Icon className="w-full h-full" /> },
-  { name: "JavaScript", icon: <JavascriptIcon className="w-full h-full" /> },
-  { name: "TypeScript", icon: <TypescriptIcon className="w-full h-full" /> },
-  { name: "React", icon: <ReactIcon className="w-full h-full" /> },
-  { name: "Next.js", icon: <NextjsIcon className="w-full h-full" /> },
-  { name: "Node.js", icon: <NodejsIcon className="w-full h-full" /> },
-  { name: "Tailwind CSS", icon: <TailwindCssIcon className="w-full h-full" /> },
-  { name: "Figma", icon: <FigmaIcon className="w-full h-full" /> },
+  { name: "HTML5", icon: <Html5Icon className="w-full h-full" />, proficiency: 90 },
+  { name: "CSS3", icon: <Css3Icon className="w-full h-full" />, proficiency: 85 },
+  { name: "JavaScript", icon: <JavascriptIcon className="w-full h-full" />, proficiency: 80 },
+  { name: "TypeScript", icon: <TypescriptIcon className="w-full h-full" />, proficiency: 75 },
+  { name: "React", icon: <ReactIcon className="w-full h-full" />, proficiency: 80 },
+  { name: "Next.js", icon: <NextjsIcon className="w-full h-full" />, proficiency: 70 },
+  { name: "Node.js", icon: <NodejsIcon className="w-full h-full" />, proficiency: 65 },
+  { name: "Tailwind CSS", icon: <TailwindCssIcon className="w-full h-full" />, proficiency: 85 },
+  { name: "Advanced C", icon: <CIcon className="w-full h-full" />, proficiency: 70 },
+  { name: "Core Java", icon: <CoreJavaIcon className="w-full h-full" />, proficiency: 75 },
+  { name: "Git", icon: <Github className="w-full h-full" />, proficiency: 80 },
 ]
 
 export function SkillsSection() {
@@ -33,7 +37,7 @@ export function SkillsSection() {
       </div>
       <div className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {skills.map((skill) => (
-          <SkillCard key={skill.name} icon={skill.icon} name={skill.name} />
+          <SkillCard key={skill.name} icon={skill.icon} name={skill.name} proficiency={skill.proficiency} />
         ))}
       </div>
     </Section>
