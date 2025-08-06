@@ -3,7 +3,6 @@ import { SkillCard } from "@/components/skill-card"
 import { Html5Icon } from "@/components/icons/html5-icon"
 import { Css3Icon } from "@/components/icons/css3-icon"
 import { JavascriptIcon } from "@/components/icons/javascript-icon"
-import { TypescriptIcon } from "@/components/icons/typescript-icon"
 import { ReactIcon } from "@/components/icons/react-icon"
 import { NextjsIcon } from "@/components/icons/nextjs-icon"
 import { NodejsIcon } from "@/components/icons/nodejs-icon"
@@ -18,7 +17,6 @@ const skills = [
   { name: "HTML5", icon: <Html5Icon className="w-full h-full" />, proficiency: 95 },
   { name: "CSS3", icon: <Css3Icon className="w-full h-full" />, proficiency: 90 },
   { name: "JavaScript", icon: <JavascriptIcon className="w-full h-full" />, proficiency: 85 },
-  { name: "TypeScript", icon: <TypescriptIcon className="w-full h-full" />, proficiency: 80 },
   { name: "React", icon: <ReactIcon className="w-full h-full" />, proficiency: 85 },
   { name: "Next.js", icon: <NextjsIcon className="w-full h-full" />, proficiency: 75 },
   { name: "Node.js", icon: <NodejsIcon className="w-full h-full" />, proficiency: 70 },
