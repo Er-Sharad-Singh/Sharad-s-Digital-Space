@@ -10,10 +10,13 @@ export function AboutSection() {
         <div className="flex flex-col justify-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Me</h2>
           <p className="text-muted-foreground md:text-lg">
-            I'm a passionate and detail-oriented developer currently honing my skills in web development. With a background in computer science, I specialize in crafting seamless user interfaces and am growing my expertise in robust back-end systems.
+            I'm a passionate and detail-oriented MERN Stack Developer with a strong foundation in computer science. I love building smooth, responsive user interfaces and continuously expanding my skills in creating scalable and efficient back-end systems.
           </p>
           <p className="text-muted-foreground md:text-lg">
-            When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or enjoying a good cup of coffee.
+            I’m currently focused on mastering full-stack web development using MongoDB, Express.js, React, and Node.js. Beyond coding, I enjoy keeping up with the latest tech trends, contributing to open-source communities, and recharging with a good cup of coffee.
+          </p>
+          <p className="text-muted-foreground md:text-lg">
+            Always curious, always learning — I’m driven by the challenge of turning ideas into impactful digital experiences.
           </p>
           <Button asChild size="lg" className="w-fit">
             <a href="/resume.pdf" download>
