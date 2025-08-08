@@ -140,7 +140,7 @@ export function ContactSection() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="your.email@example.com" {...field} />
+                    <Input placeholder="Your email for my reply" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
