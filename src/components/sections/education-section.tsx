@@ -21,7 +21,7 @@ export function EducationSection() {
             </div>
           </CardHeader>
           <CardContent className="space-y-2">
-            <p className="font-semibold">Goel Institute Of Technology & Management, Affiliated From A.K.T.U Lucknow</p>
+            <p className="font-semibold">Goel Institute Of Technology & Management, Lucknow</p>
             <p className="text-sm text-muted-foreground">2022 - 2026</p>
           </CardContent>
         </Card>
