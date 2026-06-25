@@ -17,12 +17,12 @@ export function EducationSection() {
             <GraduationCap className="w-12 h-12 text-primary" />
             <div>
               <CardTitle className="text-xl font-bold">Bachelor of Technology</CardTitle>
-              <p className="text-muted-foreground">Computer Science & Engineering(I-DIV WITH HONS)</p>
+              <p className="text-muted-foreground">Computer Science & Engineering (I-DIV WITH HONS)</p>
             </div>
           </CardHeader>
           <CardContent className="space-y-2">
             <p className="font-semibold">Goel Institute Of Technology & Management, Lucknow</p>
-            <p className="text-sm text-muted-foreground">June,2022 - June,2026</p>
+            <p className="text-sm text-muted-foreground">June 2022 - June 2026</p>
           </CardContent>
         </Card>
       </div>
